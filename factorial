@@ -1,0 +1,33 @@
+Public Class Form13
+    Private Sub Form13_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+    Private Sub IncrementVariable(ByRef Number1 As Integer)
+
+        Number1 = Number1 + 1
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim a, b, c As Integer
+        a = CInt(TextBox1.Text)
+        b = 0
+        Call faktorial(a, b)
+
+    End Sub
+    Sub faktorial(a As Integer, b As Integer)
+        If b = 0 Then
+            b = a
+        End If
+        If a > 1 Then
+            b = b * (a - 1)
+            a = a - 1
+            'MsgBox(b)
+            Call faktorial(a, b)
+        Else
+            Label1.Text = b.ToString
+
+        End If
+
+    End Sub
+End Class
